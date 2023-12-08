@@ -32,7 +32,7 @@
     "@vitejs/plugin-vue": "^4.5.0",
     "@vueuse/core": "^10.6.1",
     "electron": "27.1.0",
-    "electron-builder": "^24.6.4",
+    "electron-builder": "^24.9.1",
     "electron-icon-builder": "^2.0.1",
     "mfm-js": "^0.23.3",
     "misskey-js": "^0.0.16",
