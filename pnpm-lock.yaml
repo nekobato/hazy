@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   electron-fetch:
     specifier: ^1.9.1
@@ -76,8 +80,8 @@ devDependencies:
     specifier: ^5.0.10
     version: 5.0.10(sass@1.69.7)
   vite-plugin-electron:
-    specifier: ^0.15.5
-    version: 0.15.5(vite-plugin-electron-renderer@0.14.5)
+    specifier: ^0.28.0
+    version: 0.28.0(electron@28.1.1)(vite-plugin-electron-renderer@0.14.5)
   vite-plugin-electron-renderer:
     specifier: ^0.14.5
     version: 0.14.5
@@ -1972,6 +1976,7 @@ packages:
 
   /base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+    requiresBuild: true
     dev: true
 
   /base@0.11.2:
@@ -3277,6 +3282,7 @@ packages:
 
   /fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
+    requiresBuild: true
     dev: true
 
   /fastest-levenshtein@1.0.16:
@@ -4393,6 +4399,7 @@ packages:
 
   /json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
+    requiresBuild: true
     dev: true
 
   /json-schema-traverse@1.0.0:
@@ -7138,17 +7145,21 @@ packages:
     resolution: {integrity: sha512-EQ7ORuPp8vFPCqfuGnVo7d36fXS0IFH4/RUlKb1drseix3TQEPcgwEuFADdXBxRgqMp70njz/1m0kdf5lEsm8w==}
     dev: true
 
-  /vite-plugin-electron@0.15.5(vite-plugin-electron-renderer@0.14.5):
-    resolution: {integrity: sha512-GD2JkJJSsP3kyJlyCH4ep3spelkyzOVSWHswv5nwYhS8GfsojPxUjhs9U4tuDb5mZ2XDYyTN+nBSB/abRnTmYQ==}
+  /vite-plugin-electron@0.28.0(electron@28.1.1)(vite-plugin-electron-renderer@0.14.5):
+    resolution: {integrity: sha512-0sAgFKQnMHR1o8iTM/rs1D6VUmeUiyc/RNUFhN5uq13LONv6Ss3grX3PwJztczxMWVSr6rp2gpAhfKQQJM3Kvg==}
     peerDependencies:
+      electron: ^28.0.0
       tree-kill: '*'
       vite-plugin-electron-renderer: '*'
     peerDependenciesMeta:
+      electron:
+        optional: true
       tree-kill:
         optional: true
       vite-plugin-electron-renderer:
         optional: true
     dependencies:
+      electron: 28.1.1
       vite-plugin-electron-renderer: 0.14.5
     dev: true
 
@@ -7432,7 +7443,3 @@ packages:
       buffer-crc32: 0.2.13
       fd-slicer: 1.1.0
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
