@@ -5,7 +5,7 @@ import { useTimelineStore } from "@/store/timeline";
 import { ipcSend } from "@/utils/ipc";
 import { MisskeyStreamChannel, useMisskeyStream } from "@/utils/websocket";
 import { nextTick, onBeforeMount, onBeforeUnmount } from "vue";
-import { createReaction, deleteReaction, isMyReaction } from "@/utils/misskey";
+import { createReaction, deleteReaction } from "@/utils/misskey";
 import { getHazyRoute } from "@/utils/hazyRoute";
 import { RouterView, useRouter } from "vue-router";
 

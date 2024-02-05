@@ -51,7 +51,11 @@ export const createReaction = async (postId: string, reaction: string) => {
   const targetPost = timelineStore.current?.posts.find((post) => post.id === postId);
   if (targetPost) {
     targetPost.myReaction = reaction;
-    targetPost.reactions[reaction] += 1;
+    if (!targetPost.reactions[reaction]) {
+      targetPost.reactions[reaction] += 1;
+    } else {
+      targetPost.reactions[reaction] = 1;
+    }
   }
 };
 
@@ -63,7 +67,11 @@ export const deleteReaction = async (postId: string) => {
   // Delete reaction on Local
   const targetPost = timelineStore.current?.posts.find((post) => post.id === postId);
   if (targetPost && targetPost.myReaction) {
-    targetPost.reactions[targetPost.myReaction] -= 1;
+    if (targetPost.reactions[targetPost.myReaction] === 1) {
+      delete targetPost.reactions[targetPost.myReaction];
+    } else {
+      targetPost.reactions[targetPost.myReaction] -= 1;
+    }
     targetPost.myReaction = undefined;
   }
 };

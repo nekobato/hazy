@@ -34,7 +34,6 @@ export default defineComponent({
     // const enableAnimation = true; // TODO: settings
 
     console.log(this.text, ast);
-    console.log("emojis", this.emojis);
 
     const structElement = (ast: mfm.MfmNode[]) =>
       ast.map((node) => {
