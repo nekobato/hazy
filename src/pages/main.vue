@@ -32,7 +32,7 @@ const misskeyStream = useMisskeyStream({
       case "reacted":
         console.info("reacted", data);
         timelineStore.addReaction({
-          postId: data.body.id,
+          postId: data.id,
           reaction: data.body.reaction,
         });
         break;

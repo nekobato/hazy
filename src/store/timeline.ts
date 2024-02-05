@@ -198,7 +198,7 @@ export const useTimelineStore = defineStore("timeline", () => {
 
   const addReaction = async ({ postId, reaction }: { postId: string; reaction: string }) => {
     // TODO: reactionがremote serverだった場合
-    const post = store.timelines[currentIndex.value].posts.find((post) => post.id === postId);
+    const post = store.timelines[currentIndex.value].posts.find((p) => p.id === postId);
     if (!post) return;
     const reactions = post.renote ? post.renote.reactions : post.reactions;
     if (Object.keys(reactions).includes(reaction)) {

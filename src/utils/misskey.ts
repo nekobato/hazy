@@ -51,7 +51,7 @@ export const createReaction = async (postId: string, reaction: string) => {
   const targetPost = timelineStore.current?.posts.find((post) => post.id === postId);
   if (targetPost) {
     targetPost.myReaction = reaction;
-    if (!targetPost.reactions[reaction]) {
+    if (targetPost.reactions[reaction]) {
       targetPost.reactions[reaction] += 1;
     } else {
       targetPost.reactions[reaction] = 1;
