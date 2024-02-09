@@ -2,6 +2,7 @@
 import AccountSettings from "@/components/Settings/AccountSettings.vue";
 import ApplicationInformation from "@/components/Settings/ApplicationInformation.vue";
 import ApplicationSettings from "@/components/Settings/ApplicationSettings.vue";
+import FieldRow from "@/components/Settings/FieldRow.vue";
 import TimelineSettings from "@/components/Settings/TimelineSettings.vue";
 import WindowHeader from "@/components/WindowHeader.vue";
 </script>
@@ -10,6 +11,9 @@ import WindowHeader from "@/components/WindowHeader.vue";
   <div class="settings">
     <WindowHeader windowType="settings" />
     <div class="hazy-scroller">
+      <FieldRow />
+      <FieldRow :indent="1" />
+      <FieldRow :indent="1" />
       <AccountSettings />
       <TimelineSettings />
       <ApplicationSettings />
@@ -29,7 +33,6 @@ import WindowHeader from "@/components/WindowHeader.vue";
   border-radius: 8px;
 }
 .hazy-scroller {
-  background: var(--hazy-color-black-t3);
   border: 1px solid var(--hazy-border-color);
 }
 </style>

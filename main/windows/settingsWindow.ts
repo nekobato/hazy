@@ -2,25 +2,20 @@ import { join } from "path";
 import { BrowserWindow } from "electron";
 import { pageRoot, preload } from "../static";
 
-const pageName = "/post";
+const pageName = "/settings";
 
-export function createPostWindow() {
+export function createSettingsWindow() {
   const win = new BrowserWindow({
     height: 320,
     width: 540,
-    show: false,
+    show: true,
     resizable: true,
     webPreferences: {
-      nodeIntegration: true,
       preload: preload,
     },
-    useContentSize: false,
     center: true,
     frame: false,
-    transparent: false,
-    hasShadow: true,
-    skipTaskbar: false,
-    alwaysOnTop: false,
+    skipTaskbar: true,
     fullscreenable: false,
   });
 

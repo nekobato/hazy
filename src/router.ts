@@ -7,12 +7,12 @@ const routes = [
     component: () => import("./pages/main.vue"),
     children: [
       {
-        path: "/main/timeline",
+        path: "timeline",
         name: "MainTimeline",
         component: () => import("./pages/main/timeline.vue"),
       },
       {
-        path: "/main/settings",
+        path: "settings",
         name: "MainSettings",
         component: () => import("./pages/main/settings.vue"),
       },
@@ -24,14 +24,26 @@ const routes = [
     component: () => import("./pages/post.vue"),
     children: [
       {
-        path: "/post/create",
+        path: "create",
         name: "PostCreate",
         component: () => import("./pages/post/create.vue"),
       },
       {
-        path: "/post/reaction",
+        path: "reaction",
         name: "PostReaction",
         component: () => import("./pages/post/reaction.vue"),
+      },
+    ],
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+    component: () => import("./pages/settings.vue"),
+    children: [
+      {
+        path: "",
+        name: "SettingsIndex",
+        component: () => import("./pages/settings/index.vue"),
       },
     ],
   },

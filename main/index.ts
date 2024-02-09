@@ -2,6 +2,7 @@ import electron, { app, BrowserWindow, dialog, globalShortcut, ipcMain, Menu, po
 import { createMainWindow } from "./windows/mainWindow";
 import { createPostWindow } from "./windows/postWindow";
 import { createMediaViewerWindow } from "./windows/mediaViewerWindow";
+import { createSettingsWindow } from "./windows/settingsWindow";
 import { DEBUG, isMac } from "./env";
 import { release } from "os";
 import menuTemplate from "./menu";
@@ -38,6 +39,7 @@ autoUpdater.on("update-downloaded", () => {
 let mainWindow: BrowserWindow | null = null;
 let mediaViewerWindow: BrowserWindow | null = null;
 let postWindow: BrowserWindow | null = null;
+let settingsWindow: BrowserWindow | null = null;
 
 protocol.registerSchemesAsPrivileged([{ scheme: "app", privileges: { secure: true, standard: true } }]);
 
@@ -81,6 +83,7 @@ const start = () => {
   mainWindow = createMainWindow();
   mediaViewerWindow = createMediaViewerWindow();
   postWindow = createPostWindow();
+  settingsWindow = createSettingsWindow();
 
   ipcMain.on("renderer-event", async (_, event: string, payload?: any) => {
     const data = payload ? JSON.parse(payload) : null;
@@ -132,6 +135,12 @@ const start = () => {
       case "stream:unsub-note":
         // TODO: main processへ移植
         mainWindow?.webContents.send("stream:unsub-note", data);
+        break;
+      case "settings:open":
+        settingsWindow?.show();
+        break;
+      case "settings:close":
+        settingsWindow?.hide();
         break;
       case "update-app":
         autoUpdater.quitAndInstall();
@@ -238,9 +247,4 @@ if (DEBUG) {
   }
 }
 
-app
-  .whenReady()
-  .then(start)
-  .catch((error) => {
-    dialog.showErrorBox("Error", error.message);
-  });
+app.whenReady().then(start);

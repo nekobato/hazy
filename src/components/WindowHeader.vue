@@ -21,6 +21,9 @@ const exit = () => {
     case "post":
       ipcSend("post:close");
       break;
+    case "settings":
+      ipcSend("settings:close");
+      break;
     case "tutorial":
       router.push("/main/settings");
       break;
@@ -59,8 +62,7 @@ const settings = () => {
     <button class="nn-button type-ghost exit" @click="exit">
       <Icon icon="mingcute:close-line" class="nn-icon size-xsmall" v-if="props.windowType === 'post'" />
       <Icon icon="mingcute:close-line" class="nn-icon size-xsmall" v-if="props.windowType === 'main'" />
-      <Icon icon="mingcute:arrow-left-line" class="nn-icon size-xsmall" v-if="props.windowType === 'tutorial'" />
-      <Icon icon="mingcute:arrow-left-line" class="nn-icon size-xsmall" v-if="props.windowType === 'settings'" />
+      <Icon icon="mingcute:close-line" class="nn-icon size-xsmall" v-if="props.windowType === 'settings'" />
     </button>
     <button class="nn-button type-ghost haze" @click="haze" v-if="props.windowType === 'main'">
       <Icon icon="mingcute:ghost-line" class="nn-icon size-xsmall" />
