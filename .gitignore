@@ -31,3 +31,4 @@ release
 dist-electron
 .output
 .nuxt
+electron-builder.env

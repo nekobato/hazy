@@ -1,0 +1,37 @@
+{
+  $schema: "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+  appId: "net.nekobato.hazy",
+  asar: true,
+  productName: "hazy",
+  directories: {
+    output: "release/${version}",
+  },
+  files: ["dist", "dist-electron"],
+  mac: {
+    category: "public.app-category.social-networking",
+    icon: "dist/icons/mac/icon.icns",
+    artifactName: "${productName}_${version}.${ext}",
+    entitlements: "build/entitlements.mac.plist",
+    entitlementsInherit: "build/entitlements.mac.plist",
+    target: ["default"],
+    notarize: {
+      teamId: "${APPLE_TEAM_ID}",
+    },
+    publish: ["github"],
+  },
+  // win: {
+  //   target: [
+  //     {
+  //       target: "nsis",
+  //       arch: ["x64"],
+  //     },
+  //   ],
+  //   artifactName: "${productName}_${version}.${ext}",
+  // },
+  nsis: {
+    oneClick: false,
+    perMachine: false,
+    allowToChangeInstallationDirectory: true,
+    deleteAppDataOnUninstall: false,
+  },
+}
