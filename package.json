@@ -41,7 +41,7 @@
     "postcss-html": "^1.6.0",
     "prettier": "^3.2.5",
     "sass": "^1.71.0",
-    "storybook": "^7.6.16",
+    "storybook": "^8.0.4",
     "stylelint": "^16.2.1",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-recommended-scss": "^14.0.0",
