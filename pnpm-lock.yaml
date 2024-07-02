@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^2.0.1
     version: 2.0.1
   element-plus:
-    specifier: ^2.7.3
-    version: 2.7.3(vue@3.4.23)
+    specifier: ^2.7.6
+    version: 2.7.6(vue@3.4.23)
   mfm-js:
     specifier: ^0.24.0
     version: 0.24.0
@@ -3805,8 +3805,8 @@ packages:
       - supports-color
     dev: true
 
-  /element-plus@2.7.3(vue@3.4.23):
-    resolution: {integrity: sha512-OaqY1kQ2xzNyRFyge3fzM7jqMwux+464RBEqd+ybRV9xPiGxtgnj/sVK4iEbnKnzQIa9XK03DOIFzoToUhu1DA==}
+  /element-plus@2.7.6(vue@3.4.23):
+    resolution: {integrity: sha512-36sw1K23hYjgeooR10U6CiCaCp2wvOqwoFurADZVlekeQ9v5U1FhJCFGEXO6i/kZBBMwsE1c9fxjLs9LENw2Rg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
