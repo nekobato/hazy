@@ -61,7 +61,7 @@
     "vite-plugin-electron-renderer": "^0.14.5",
     "vite-plugin-resolve": "^2.5.1",
     "vitepress": "^1.2.2",
-    "vue": "^3.4.23",
+    "vue": "^3.4.31",
     "vue-router": "^4.3.2",
     "vue-tsc": "^2.0.19"
   }
